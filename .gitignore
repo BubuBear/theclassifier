@@ -28,5 +28,5 @@ hs_err_pid*
 
 # Gauge Files
 /.gauge/*
-/src/test/resources/bdd/logs/
-/src/test/resources/bdd/reports/html-report/
+/src/test/resources/bdd/logs/*
+/src/test/resources/bdd/reports/html-report/*
