@@ -58,4 +58,4 @@ Tags: req000, iris
   * Alice must open the application
   * When Alice insert sepal length: "7.6", sepal width:"3,2", petal length:"4.7", petal width:"error"
   * And when Alice start classify process
-  * Then Alice will see the the following error message "Petal petal is not correct, try to fix it! (remember for double number use . and not , (i.e. 5.4))"
+  * Then Alice will see the the following error message "Petal length is not correct, try to fix it! (remember for double number use . and not , (i.e. 5.4))"
