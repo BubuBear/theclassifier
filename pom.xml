@@ -24,16 +24,23 @@
         </dependency>
         <dependency>
             <groupId>com.thoughtworks.gauge</groupId>
-            <artifactId>gauge-java</artifactId>
+          <artifactId>gauge-java</artifactId>
           <version>0.7.13</version>
-            <scope>test</scope>
+          <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-            <version>3.17.2</version>
-            <scope>test</scope>
-        </dependency>
+      <dependency>
+        <groupId>org.assertj</groupId>
+        <artifactId>assertj-core</artifactId>
+        <version>3.17.2</version>
+        <scope>test</scope>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.18.12</version>
+        <scope>provided</scope>
+      </dependency>
     </dependencies>
     <build>
         <plugins>
