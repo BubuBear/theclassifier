@@ -23,6 +23,6 @@
 hs_err_pid*
 /.idea/.gitignore
 /.idea/*
-/.gauge/
-/src/test/resources/bdd.logs/
-/src/test/resources/bdd.reports/html-report/
+/.gauge/*
+/src/test/resources/bdd.logs/*
+/src/test/resources/bdd.reports/html-report/*
