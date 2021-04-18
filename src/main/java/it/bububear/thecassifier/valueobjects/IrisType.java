@@ -8,9 +8,9 @@ import lombok.Setter;
 @Data
 public class IrisType {
 
-  private static final String IRIS_SETOSA = "Iris-setosa";
-  private static final String IRIS_VERSICOLOR = "Iris-versicolor";
-  private static final String IRIS_VIRGINICA = "Iris-virginica";
+  public static final String IRIS_SETOSA = "Iris-setosa";
+  public static final String IRIS_VERSICOLOR = "Iris-versicolor";
+  public static final String IRIS_VIRGINICA = "Iris-virginica";
 
   @Setter(AccessLevel.NONE)
   private String irisTypeValue;
