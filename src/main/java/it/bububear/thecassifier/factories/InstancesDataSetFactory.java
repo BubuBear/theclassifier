@@ -1,6 +1,7 @@
 package it.bububear.thecassifier.factories;
 
 import weka.core.Attribute;
+import weka.core.DenseInstance;
 import weka.core.Instances;
 
 import java.util.ArrayList;
@@ -19,6 +20,12 @@ public class InstancesDataSetFactory {
     int positionOfClassesAttribute = dataSet.numAttributes() - 1;
     dataSet.setClassIndex(positionOfClassesAttribute);
     return dataSet;
+  }
+
+  public static DenseInstance createNewRecordOfDataSetType(Instances dataSet, double[] attributesValueArray) {
+    DenseInstance denseInstance = new DenseInstance(1, attributesValueArray);
+    denseInstance.setDataset(dataSet);
+    return denseInstance;
   }
 
 }
