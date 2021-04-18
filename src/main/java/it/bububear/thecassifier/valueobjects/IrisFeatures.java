@@ -9,11 +9,11 @@ import lombok.Setter;
 @AllArgsConstructor
 public class IrisFeatures {
   @Setter(AccessLevel.NONE)
-  private SepalLength sepalLength;
+  private final SepalLength sepalLength;
   @Setter(AccessLevel.NONE)
-  private SepalWidth sepalWidth;
+  private final SepalWidth sepalWidth;
   @Setter(AccessLevel.NONE)
-  private PetalLength petalLength;
+  private final PetalLength petalLength;
   @Setter(AccessLevel.NONE)
-  private PetalWidth petalWidth;
+  private final PetalWidth petalWidth;
 }

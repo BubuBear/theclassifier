@@ -9,5 +9,5 @@ import lombok.Setter;
 @AllArgsConstructor
 public class SepalWidth {
   @Setter(AccessLevel.NONE)
-  private double value;
+  private final double value;
 }
