@@ -41,6 +41,12 @@
       <version>1.18.12</version>
       <scope>provided</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/nz.ac.waikato.cms.weka/weka-stable -->
+    <dependency>
+      <groupId>nz.ac.waikato.cms.weka</groupId>
+      <artifactId>weka-stable</artifactId>
+      <version>3.8.5</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
