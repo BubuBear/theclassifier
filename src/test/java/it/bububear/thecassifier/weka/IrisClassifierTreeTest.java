@@ -97,7 +97,6 @@ class IrisClassifierTreeTest {
 
   private DenseInstance getDatasetRecordForClassifier(Instances dataSet, double[] irisSetosaFeatures) {
     DenseInstance denseInstance = new DenseInstance(1, irisSetosaFeatures);
-    dataSet.add(denseInstance);
     denseInstance.setDataset(dataSet);
     return denseInstance;
   }
