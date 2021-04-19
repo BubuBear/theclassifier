@@ -1,0 +1,10 @@
+% arff file only for test purpose
+@RELATION testdata
+@ATTRIBUTE firstfeature	REAL
+@ATTRIBUTE secondfeature	REAL
+@ATTRIBUTE class 	{First-class,Second-class}
+
+@DATA
+5.1,3.5,First-class
+4.9,3.0,Second-class
+4.7,3.2,Second-class
