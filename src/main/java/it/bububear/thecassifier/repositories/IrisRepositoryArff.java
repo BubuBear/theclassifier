@@ -23,6 +23,8 @@ public class IrisRepositoryArff implements IrisRepository {
     Instances data;
     try {
       data = source.getDataSet();
+      int classesAttributeIndex = data.numAttributes() - 1;
+      data.setClassIndex(classesAttributeIndex);
     } catch (Exception exception) {
       throw new IrisClassifierWekaDataSetLoadException("DataSet loading went wrong, contact the IT department", exception);
     }

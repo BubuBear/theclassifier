@@ -46,6 +46,14 @@ class IrisRepositoryArffTest {
     assertThat(dataSetActual.get(indexOfInstanceToCompare).value(indexOfInstanceValueToCompare)).isEqualTo(datasetExpected.get(indexOfInstanceToCompare).value(indexOfInstanceValueToCompare));
   }
 
+  @Test
+  void getDataSetRightClassIndex() throws Exception {
+    Instances datasetExpected = createByHandExpectedDataSet();
+    Instances dataSetActual = irisRepositoryArff.getDataSet();
+    int expectedNumberOfClasses = 2;
+    assertThat(dataSetActual.numClasses()).isEqualTo(expectedNumberOfClasses);
+  }
+
   private Instances createByHandExpectedDataSet() {
     List<String> attributeNameList = Arrays.asList("firstfeature", "secondfeature");
     List<String> classNameList = Arrays.asList("First-class", "Second-class");
@@ -59,6 +67,7 @@ class IrisRepositoryArffTest {
     double[] thirdRecordOfTestRepoARFFFileValues = {4.7, 3.2};
     DenseInstance thirdRecordOfTestRepoARFFFile = InstancesDataSetFactory.createNewRecordOfDataSetType(datasetExpected, thirdRecordOfTestRepoARFFFileValues);
     datasetExpected.add(thirdRecordOfTestRepoARFFFile);
+    datasetExpected.setClassIndex(datasetExpected.numAttributes() - 1);
     return datasetExpected;
   }
 }
