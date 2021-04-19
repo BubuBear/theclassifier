@@ -1,6 +1,7 @@
 package it.bububear.thecassifier.valueobjects;
 
 import it.bububear.thecassifier.exceptions.IrisUnknownTypeException;
+import it.bububear.thecassifier.weka.IrisClassifier;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
@@ -30,6 +31,18 @@ public class IrisType {
       default:
         throw new IrisUnknownTypeException(String.format("The following: %s is NOT an iris type", irisTypeInput));
     }
+  }
+
+  public IrisType(ClassificationOutput classificationOutput) {
+    double irisDoubleValue = classificationOutput.getClassifiedClass();
+    if (irisDoubleValue == IrisClassifier.IRIS_SETOSA_DOUBLE_VALUE)
+      irisTypeValue = IRIS_SETOSA;
+    else if (irisDoubleValue == IrisClassifier.IRIS_VERSICOLOR_DOUBLE_VALUE)
+      irisTypeValue = IRIS_VERSICOLOR;
+    else if (irisDoubleValue == IrisClassifier.IRIS_VIRGINICA_DOUBLE_VALUE)
+      irisTypeValue = IRIS_VIRGINICA;
+    else
+      throw new IrisUnknownTypeException(String.format("The following: %s is NOT an iris type", irisDoubleValue));
   }
 
 }

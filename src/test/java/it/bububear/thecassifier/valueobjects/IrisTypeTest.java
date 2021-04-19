@@ -40,4 +40,31 @@ class IrisTypeTest {
     assertThat(isExceptionIsTrough).isTrue();
   }
 
+  @Test
+  void creationOfIrisSetosaTypeFromDouble() {
+    String irisSetosaExpected = "Iris-setosa";
+    double irisSetosaDoubleValue = 0.0;
+    ClassificationOutput classificationOutputExpected = new ClassificationOutput(irisSetosaDoubleValue);
+    IrisType irisTypeActual = new IrisType(classificationOutputExpected);
+    assertThat(irisTypeActual.getIrisTypeValue()).isEqualTo(irisSetosaExpected);
+  }
+
+  @Test
+  void creationOfIrisVersicolorTypeFromDouble() {
+    String irisVersicolorExpected = "Iris-versicolor";
+    double irisSetosaDoubleValue = 1.0;
+    ClassificationOutput classificationOutputExpected = new ClassificationOutput(irisSetosaDoubleValue);
+    IrisType irisTypeActual = new IrisType(classificationOutputExpected);
+    assertThat(irisTypeActual.getIrisTypeValue()).isEqualTo(irisVersicolorExpected);
+  }
+
+  @Test
+  void creationOfIrisVirginicaTypeFromDouble() {
+    String irisVirginicaExpected = "Iris-virginica";
+    double irisSetosaDoubleValue = 2.0;
+    ClassificationOutput classificationOutputExpected = new ClassificationOutput(irisSetosaDoubleValue);
+    IrisType irisTypeActual = new IrisType(classificationOutputExpected);
+    assertThat(irisTypeActual.getIrisTypeValue()).isEqualTo(irisVirginicaExpected);
+  }
+
 }
