@@ -23,14 +23,14 @@ public class ConsoleController {
   }
 
   public void run() {
+    System.out.println(WELCOME_MSG);
+    System.out.println(INSERT_FEATURES_MSG);
     while (scanner.hasNextLine()) {
-      System.out.println(WELCOME_MSG);
-      System.out.println(INSERT_FEATURES_MSG);
       try {
         String output = makePrediction(scanner.nextLine());
-        System.out.printf("Your iris type is: %s%n", output);
+        System.out.printf("############## Your iris type is: -->>>>***%s***<<<<--%n", output);
         System.out.println(INSERT_FEATURES_MSG);
-      } catch (IrisFeaturesFormatException | IrisClassifyException exception) {
+      } catch (Exception exception) {
         System.out.println(ERROR_MSG);
       }
     }
