@@ -19,13 +19,13 @@ paths:
         '200':
           $ref: '#/components/responses/IrisClassificationResponse'
         '400':
-          $ref: '#/components/responses/IrisClassificationErrorResponse'
-        '401':
-          $ref: '#/components/responses/IrisClassificationErrorResponse'
+          $ref: '#/components/responses/IrisClassificationErrorResponse400'
+        '404':
+          $ref: '#/components/responses/IrisClassificationErrorResponse404'
         '500':
-          $ref: '#/components/responses/IrisClassificationErrorResponse'
+          $ref: '#/components/responses/IrisClassificationErrorResponse500'
         '501':
-          $ref: '#/components/responses/IrisClassificationErrorResponse'
+          $ref: '#/components/responses/IrisClassificationErrorResponse501'
       tags:
         - iris-features
       requestBody:
@@ -59,6 +59,9 @@ components:
     IrisFeatures:
       title: IrisFeatures
       type: object
+      x-tags:
+        - iris-input
+      x-examples: {}
       properties:
         sepallength:
           type: number
@@ -93,8 +96,6 @@ components:
         - sepalwidth
         - petallength
         - petalwidth
-      x-tags:
-        - iris-input
   responses:
     IrisClassificationResponse:
       description: Example response
@@ -123,7 +124,7 @@ components:
             iris-versicolor:
               value:
                 iris-type: Iris-versicolor
-    IrisClassificationErrorResponse:
+    IrisClassificationErrorResponse400:
       description: Example response
       content:
         application/json:
@@ -134,5 +135,54 @@ components:
                 type: string
             required:
               - errorMessage
+          examples:
+            error-400:
+              value:
+                errorMessage: 'Your request contains not valid input, check documentation and retry'
+    IrisClassificationErrorResponse404:
+      description: Example response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              errorMessage:
+                type: string
+            required:
+              - errorMessage
+          examples:
+            error-404:
+              value:
+                errorMessage: Your endpoint does not exist (yet) or check for typo inside url
+    IrisClassificationErrorResponse500:
+      description: Example response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              errorMessage:
+                type: string
+            required:
+              - errorMessage
+          examples:
+            error-500:
+              value:
+                errorMessage: This is bad! If you have time retry later otherwise call the IT department
+    IrisClassificationErrorResponse501:
+      description: Example response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              errorMessage:
+                type: string
+            required:
+              - errorMessage
+          examples:
+            error-501:
+              value:
+                errorMessage: 'Be patient, this feature is not yet implemented. Retry tomorrow!'
 tags:
   - name: iris
