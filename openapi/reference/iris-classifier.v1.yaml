@@ -1,0 +1,138 @@
+openapi: 3.0.0
+info:
+  title: iris-classifier
+  version: '1.0'
+  contact:
+    name: Name
+  license:
+    name: MIT
+    url: 'https://choosealicense.com/licenses/mit/'
+  description: This API allow to whoever want to interact with Iris Classifier based on Iris features
+servers:
+  - url: 'http://localhost:8080'
+paths:
+  /classify-iris:
+    post:
+      summary: ''
+      operationId: post-classify-iris
+      responses:
+        '200':
+          $ref: '#/components/responses/IrisClassificationResponse'
+        '400':
+          $ref: '#/components/responses/IrisClassificationErrorResponse'
+        '401':
+          $ref: '#/components/responses/IrisClassificationErrorResponse'
+        '500':
+          $ref: '#/components/responses/IrisClassificationErrorResponse'
+        '501':
+          $ref: '#/components/responses/IrisClassificationErrorResponse'
+      tags:
+        - iris-features
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IrisFeatures'
+            examples:
+              iris-versicolor:
+                value:
+                  sepallength: 7
+                  sepalwidth: 3.2
+                  petallength: 4.7
+                  petalwidth: 1.4
+              iris-setosa:
+                value:
+                  sepallength: 5.1
+                  sepalwidth: 3.5
+                  petallength: 1.4
+                  petalwidth: 0.2
+              iris-virginica:
+                value:
+                  sepallength: 7.6
+                  sepalwidth: 3
+                  petallength: 6.6
+                  petalwidth: 2.1
+        description: The body request contains the actual iris measures
+      description: This endpoint invoce operation which given iris features return features type
+components:
+  schemas:
+    IrisFeatures:
+      title: IrisFeatures
+      type: object
+      properties:
+        sepallength:
+          type: number
+          maximum: 20
+          exclusiveMinimum: true
+          minimum: 0
+          example: 5.1
+          format: double
+        sepalwidth:
+          type: number
+          maximum: 20
+          exclusiveMinimum: true
+          minimum: 0
+          example: 3.5
+          format: double
+        petallength:
+          type: number
+          maximum: 20
+          exclusiveMinimum: true
+          minimum: 0
+          example: 1.4
+          format: double
+        petalwidth:
+          type: number
+          maximum: 20
+          exclusiveMinimum: true
+          minimum: 0
+          example: 0.2
+          format: double
+      required:
+        - sepallength
+        - sepalwidth
+        - petallength
+        - petalwidth
+      x-tags:
+        - iris-input
+  responses:
+    IrisClassificationResponse:
+      description: Example response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              iris-type:
+                type: string
+                enum:
+                  - Iris-setosa
+                  - Iris-versicolor
+                  - Iris-virginica
+                example: Iris-setosa
+                readOnly: true
+            required:
+              - iris-type
+          examples:
+            iris-setosa:
+              value:
+                iris-type: Iris-setosa
+            iris-virginica:
+              value:
+                iris-type: Iris-virginica
+            iris-versicolor:
+              value:
+                iris-type: Iris-versicolor
+    IrisClassificationErrorResponse:
+      description: Example response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              errorMessage:
+                type: string
+            required:
+              - errorMessage
+tags:
+  - name: iris
