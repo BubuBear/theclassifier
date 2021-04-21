@@ -13,13 +13,8 @@ public class IrisClassifierTree implements IrisClassifier {
 
   private final AbstractClassifier tree;
 
-  public IrisClassifierTree(AbstractClassifier tree, String[] options) throws IrisClassifierWekaBuildException {
+  public IrisClassifierTree(AbstractClassifier tree) throws IrisClassifierWekaBuildException {
     this.tree = tree;
-    try {
-      tree.setOptions(options);
-    } catch (Exception exception) {
-      throw new IrisClassifierWekaBuildException("Classifier Options are wrong, check if values are correct", exception);
-    }
   }
 
   @Override

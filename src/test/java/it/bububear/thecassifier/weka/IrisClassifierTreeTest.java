@@ -1,5 +1,6 @@
 package it.bububear.thecassifier.weka;
 
+import it.bububear.thecassifier.exceptions.IrisClassifierWekaBuildException;
 import it.bububear.thecassifier.valueobjects.AccuracyScore;
 import it.bububear.thecassifier.valueobjects.ClassificationOutput;
 import org.junit.jupiter.api.BeforeEach;
@@ -25,7 +26,12 @@ class IrisClassifierTreeTest {
     J48 j48TreeClassifier = new J48();
     String unprunedTreeOption = "-U";
     String[] options = {unprunedTreeOption};
-    irisClassifierTree = new IrisClassifierTree(j48TreeClassifier, options);
+    try {
+      j48TreeClassifier.setOptions(options);
+    } catch (Exception exception) {
+      throw new IrisClassifierWekaBuildException("Classifier Options are wrong, check if values are correct", exception);
+    }
+    irisClassifierTree = new IrisClassifierTree(j48TreeClassifier);
   }
 
   @Test
