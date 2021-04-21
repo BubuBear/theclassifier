@@ -26,5 +26,7 @@ README.md
 FILES
 VERSION
 src/main/java/it/openapigenerator/theclassifier/apis/*ApiController*.java
+src/main/java/it/openapigenerator/theclassifier/utils/OpenAPI2SpringBoot.java
+src/main/resources/application.properties
 
 
