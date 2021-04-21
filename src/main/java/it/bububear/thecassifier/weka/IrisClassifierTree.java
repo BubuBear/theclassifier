@@ -13,7 +13,7 @@ public class IrisClassifierTree implements IrisClassifier {
 
   private final AbstractClassifier tree;
 
-  public IrisClassifierTree(AbstractClassifier tree) throws IrisClassifierWekaBuildException {
+  public IrisClassifierTree(AbstractClassifier tree){
     this.tree = tree;
   }
 
