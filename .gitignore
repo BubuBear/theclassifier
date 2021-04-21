@@ -34,3 +34,7 @@ hs_err_pid*
 # Maven
 /target/*
 /theclassifier.iml
+/.openapi-generator/*
+/.openapi-generator/FILES
+/.openapi-generator/VERSION
+/.openapi-generator/iris-classifier.v1.yaml.sha256
