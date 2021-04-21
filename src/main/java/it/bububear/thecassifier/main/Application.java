@@ -26,7 +26,12 @@ public class Application {
     J48 j48TreeClassifier = new J48();
     String unprunedTreeOption = "-U";
     String[] options = {unprunedTreeOption};
-    IrisClassifier irisClassifier = new IrisClassifierTree(j48TreeClassifier, options);
+    try {
+      j48TreeClassifier.setOptions(options);
+    } catch (Exception exception) {
+      throw new IrisClassifierWekaBuildException("Classifier Options are wrong, check if values are correct", exception);
+    }
+    IrisClassifier irisClassifier = new IrisClassifierTree(j48TreeClassifier);
     IrisClassifierService irisClassifierService = new IrisClassifierServiceWeka(trainDataSetRepository, testDataSetRepository, irisClassifier);
     Scanner scanner = new Scanner(System.in);
     ConsoleController consoleController = new ConsoleController(irisClassifierService, scanner);

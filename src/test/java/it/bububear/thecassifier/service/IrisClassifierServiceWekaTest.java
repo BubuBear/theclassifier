@@ -33,7 +33,12 @@ class IrisClassifierServiceWekaTest {
     J48 j48TreeClassifier = new J48();
     String unprunedTreeOption = "-U";
     String[] options = {unprunedTreeOption};
-    irisClassifier = new IrisClassifierTree(j48TreeClassifier, options);
+    try {
+      j48TreeClassifier.setOptions(options);
+    } catch (Exception exception) {
+      throw new IrisClassifierWekaBuildException("Classifier Options are wrong, check if values are correct", exception);
+    }
+    irisClassifier = new IrisClassifierTree(j48TreeClassifier);
     irisClassifierServiceWeka = new IrisClassifierServiceWeka(trainDataSetRepository, testDataSetRepository, irisClassifier);
   }
 
