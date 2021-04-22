@@ -7,6 +7,7 @@ import it.bububear.thecassifier.valueobjects.IrisFeatures;
 import it.bububear.thecassifier.valueobjects.IrisType;
 import it.openapigenerator.theclassifier.apis.ClassifyIrisApi;
 import it.openapigenerator.theclassifier.models.InlineResponse200WebLayer;
+import it.openapigenerator.theclassifier.models.InlineResponse400WebLayer;
 import it.openapigenerator.theclassifier.models.IrisFeaturesWebLayer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,6 +35,10 @@ public class ClassifyIrisApiController implements ClassifyIrisApi {
       return new ResponseEntity<>(mapToInlineResponse200WebLayer(classify), HttpStatus.OK);
     } catch (IrisClassifyException exception) {
       return new ResponseEntity<>(HttpStatus.I_AM_A_TEAPOT);//this is an education code =)
+    } catch (Exception exception) {
+      InlineResponse400WebLayer inlineResponse400WebLayer = new InlineResponse400WebLayer();
+      inlineResponse400WebLayer.errorMessage("Your request contains not valid input, check documentation and retry");//this is also not good for production but hey, we are learning!
+      return new ResponseEntity<>(inlineResponse400WebLayer,HttpStatus.INTERNAL_SERVER_ERROR);//this is an education code =)
     }
   }
 
