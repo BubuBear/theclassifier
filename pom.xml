@@ -206,6 +206,10 @@
             <goals>
               <goal>repackage</goal>
             </goals>
+            <configuration>
+              <mainClass>it.bububear.thecassifier.main.ApplicationSpringBoot</mainClass>
+              <finalName>iris-classifier-rest-api</finalName>
+            </configuration>
           </execution>
         </executions>
       </plugin>
