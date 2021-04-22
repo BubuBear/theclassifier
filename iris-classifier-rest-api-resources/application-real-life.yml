@@ -1,0 +1,14 @@
+springfox.documentation.swagger.v2.path: /api-docs
+server.port: 8080
+spring.jackson:
+    date-format: it.openapigenerator.theclassifier.utils.RFC3339DateFormat
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+datasets:
+  iris:
+    train: iris-classifier-rest-api-resources/datasets/iris/iris_for_train.arff
+    test: iris-classifier-rest-api-resources/datasets/iris/iris_for_test.arff
+weka:
+  tree:
+    j48:
+      unpruned-option: -U
