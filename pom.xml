@@ -208,7 +208,7 @@
             </goals>
             <configuration>
               <mainClass>it.bububear.thecassifier.main.ApplicationSpringBoot</mainClass>
-              <finalName>iris-classifier-rest-api</finalName>
+              <finalName>iris-classifier-rest-api-0.1.0</finalName>
             </configuration>
           </execution>
         </executions>
