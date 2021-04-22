@@ -24,6 +24,21 @@ class IrisFeaturesFactoryTest {
   }
 
   /**
+   * Test record -> 4.9,3.0,1.4,0.2
+   */
+  @Test
+  void createIrisFeaturesOKDouble()  {
+    SepalLength sepalLength = new SepalLength(4.9);
+    SepalWidth sepalWidth = new SepalWidth(3.0);
+    PetalLength petalLength = new PetalLength(1.4);
+    PetalWidth petalWidth = new PetalWidth(0.2);
+    IrisFeatures irisFeaturesExpected = new IrisFeatures(sepalLength, sepalWidth, petalLength, petalWidth);
+    IrisFeatures irisFeaturesActual = IrisFeaturesFactory.createIrisFeatures(4.9, 3.0, 1.4, 0.2);
+    assertThat(irisFeaturesActual).isEqualTo(irisFeaturesExpected);
+  }
+
+
+  /**
    * Test record -> wrongValue,3.0,1.4,0.2
    * "Sepal length is not correct, try to fix it! (remember for double number use . and not , (i.e. 5.4))
    */
