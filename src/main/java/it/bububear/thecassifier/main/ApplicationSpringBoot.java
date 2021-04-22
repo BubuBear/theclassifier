@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"it.bububear.thecassifier.controllers", "it.bububear.thecassifier.factories"})
+@ComponentScan(basePackages = {"it.bububear.thecassifier.controllers", "it.bububear.thecassifier.factories","org.openapitools.configuration"})
 public class ApplicationSpringBoot implements CommandLineRunner {
 
     @Override
