@@ -1,4 +1,4 @@
-package it.openapigenerator.theclassifier.inokers;
+package it.openapigenerator.theclassifier.utils;
 
 import com.fasterxml.jackson.databind.util.StdDateFormat;
 

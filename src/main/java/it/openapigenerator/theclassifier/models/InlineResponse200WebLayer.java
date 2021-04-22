@@ -11,10 +11,10 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * InlineResponse200
+ * InlineResponse200WebLayer
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-04-21T18:32:32.660141400+02:00[Europe/Berlin]")
-public class InlineResponse200   {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-04-22T18:11:11.362482500+02:00[Europe/Berlin]")
+public class InlineResponse200WebLayer   {
   /**
    * Gets or Sets irisType
    */
@@ -55,7 +55,7 @@ public class InlineResponse200   {
   @JsonProperty("iris-type")
   private IrisTypeEnum irisType;
 
-  public InlineResponse200 irisType(IrisTypeEnum irisType) {
+  public InlineResponse200WebLayer irisType(IrisTypeEnum irisType) {
     this.irisType = irisType;
     return this;
   }
@@ -85,7 +85,7 @@ public class InlineResponse200   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse200 inlineResponse200 = (InlineResponse200) o;
+    InlineResponse200WebLayer inlineResponse200 = (InlineResponse200WebLayer) o;
     return Objects.equals(this.irisType, inlineResponse200.irisType);
   }
 
@@ -97,7 +97,7 @@ public class InlineResponse200   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse200 {\n");
+    sb.append("class InlineResponse200WebLayer {\n");
     
     sb.append("    irisType: ").append(toIndentedString(irisType)).append("\n");
     sb.append("}");

@@ -1,4 +1,4 @@
-package it.openapigenerator.theclassifier.inokers;
+package it.bububear.thecassifier.main;
 
 import com.fasterxml.jackson.databind.Module;
 import org.openapitools.jackson.nullable.JsonNullableModule;
@@ -8,12 +8,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"it.openapigenerator.theclassifier.inokers", "it.openapigenerator.theclassifier.apis" , "org.openapitools.configuration"})
-public class OpenAPI2SpringBoot implements CommandLineRunner {
+@ComponentScan(basePackages = {"it.bububear.thecassifier.controllers", "it.bububear.thecassifier.factories"})
+public class ApplicationSpringBoot implements CommandLineRunner {
 
     @Override
     public void run(String... arg0) throws Exception {
@@ -23,7 +22,7 @@ public class OpenAPI2SpringBoot implements CommandLineRunner {
     }
 
     public static void main(String[] args) throws Exception {
-        new SpringApplication(OpenAPI2SpringBoot.class).run(args);
+        new SpringApplication(ApplicationSpringBoot.class).run(args);
     }
 
     static class ExitException extends RuntimeException implements ExitCodeGenerator {
