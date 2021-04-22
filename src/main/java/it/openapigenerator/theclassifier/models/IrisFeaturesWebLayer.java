@@ -10,10 +10,10 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * IrisFeatures
+ * IrisFeaturesWebLayer
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-04-21T18:32:32.660141400+02:00[Europe/Berlin]")
-public class IrisFeatures   {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-04-22T18:11:11.362482500+02:00[Europe/Berlin]")
+public class IrisFeaturesWebLayer   {
   @JsonProperty("sepallength")
   private Double sepallength;
 
@@ -26,7 +26,7 @@ public class IrisFeatures   {
   @JsonProperty("petalwidth")
   private Double petalwidth;
 
-  public IrisFeatures sepallength(Double sepallength) {
+  public IrisFeaturesWebLayer sepallength(Double sepallength) {
     this.sepallength = sepallength;
     return this;
   }
@@ -49,7 +49,7 @@ public class IrisFeatures   {
     this.sepallength = sepallength;
   }
 
-  public IrisFeatures sepalwidth(Double sepalwidth) {
+  public IrisFeaturesWebLayer sepalwidth(Double sepalwidth) {
     this.sepalwidth = sepalwidth;
     return this;
   }
@@ -72,7 +72,7 @@ public class IrisFeatures   {
     this.sepalwidth = sepalwidth;
   }
 
-  public IrisFeatures petallength(Double petallength) {
+  public IrisFeaturesWebLayer petallength(Double petallength) {
     this.petallength = petallength;
     return this;
   }
@@ -95,7 +95,7 @@ public class IrisFeatures   {
     this.petallength = petallength;
   }
 
-  public IrisFeatures petalwidth(Double petalwidth) {
+  public IrisFeaturesWebLayer petalwidth(Double petalwidth) {
     this.petalwidth = petalwidth;
     return this;
   }
@@ -127,7 +127,7 @@ public class IrisFeatures   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    IrisFeatures irisFeatures = (IrisFeatures) o;
+    IrisFeaturesWebLayer irisFeatures = (IrisFeaturesWebLayer) o;
     return Objects.equals(this.sepallength, irisFeatures.sepallength) &&
         Objects.equals(this.sepalwidth, irisFeatures.sepalwidth) &&
         Objects.equals(this.petallength, irisFeatures.petallength) &&
@@ -142,7 +142,7 @@ public class IrisFeatures   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class IrisFeatures {\n");
+    sb.append("class IrisFeaturesWebLayer {\n");
     
     sb.append("    sepallength: ").append(toIndentedString(sepallength)).append("\n");
     sb.append("    sepalwidth: ").append(toIndentedString(sepalwidth)).append("\n");

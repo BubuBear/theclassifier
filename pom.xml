@@ -193,6 +193,7 @@
               <apiPackage>it.openapigenerator.theclassifier.apis</apiPackage>
               <modelPackage>it.openapigenerator.theclassifier.models</modelPackage>
               <invokerPackage>it.openapigenerator.theclassifier.utils</invokerPackage>
+              <modelNameSuffix>WebLayer</modelNameSuffix>
             </configuration>
           </execution>
         </executions>

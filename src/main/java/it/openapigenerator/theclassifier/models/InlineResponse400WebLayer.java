@@ -10,14 +10,14 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * InlineResponse400
+ * InlineResponse400WebLayer
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-04-21T18:32:32.660141400+02:00[Europe/Berlin]")
-public class InlineResponse400   {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-04-22T18:11:11.362482500+02:00[Europe/Berlin]")
+public class InlineResponse400WebLayer   {
   @JsonProperty("errorMessage")
   private String errorMessage;
 
-  public InlineResponse400 errorMessage(String errorMessage) {
+  public InlineResponse400WebLayer errorMessage(String errorMessage) {
     this.errorMessage = errorMessage;
     return this;
   }
@@ -47,7 +47,7 @@ public class InlineResponse400   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse400 inlineResponse400 = (InlineResponse400) o;
+    InlineResponse400WebLayer inlineResponse400 = (InlineResponse400WebLayer) o;
     return Objects.equals(this.errorMessage, inlineResponse400.errorMessage);
   }
 
@@ -59,7 +59,7 @@ public class InlineResponse400   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse400 {\n");
+    sb.append("class InlineResponse400WebLayer {\n");
     
     sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
     sb.append("}");
