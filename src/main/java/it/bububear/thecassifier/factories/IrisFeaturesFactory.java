@@ -12,6 +12,14 @@ public class IrisFeaturesFactory {
     return new IrisFeatures(sepalLengthExtracted, sepalWidthExtracted, petalLengthExtracted, petalWidthExtracted);
   }
 
+  public static IrisFeatures createIrisFeatures(Double sepalLength, Double sepalWidth, Double petalLength, Double petalWidth)  {
+    SepalLength sepalLengthExtracted = new SepalLength(sepalLength);
+    SepalWidth sepalWidthExtracted = new SepalWidth(sepalWidth);
+    PetalLength petalLengthExtracted = new PetalLength(petalLength);
+    PetalWidth petalWidthExtracted = new PetalWidth(petalWidth);
+    return new IrisFeatures(sepalLengthExtracted, sepalWidthExtracted, petalLengthExtracted, petalWidthExtracted);
+  }
+
   private static SepalLength extractSepalLength(String sepalLengthString) throws IrisFeaturesFormatException {
     SepalLength sepalLength;
     try {
